@@ -3,10 +3,59 @@
 
 In this chapter, I will describe the experimental and analysis methods shared in the following chapters which are the rigs' setup, electrophysiology experiment settings and pre-rprocessing pipelines. Analysis methods tailored for each chapter will be in their own method sections. 
 
-\section{Behavioural Training Setup}
+\section{Experiment Animals}
+All procedures were conducted in accordance with the UK Animals Scientific Procedures Act (1986). Experiments were performed at University College London under personal and project licenses released by the Home Office following appropriate ethics review. C57BL/6J wild-type mice aged 10-weeks were used for behavioural training and electrophysiology recordings.
 
+\section{ Surgerical Procedures}
+
+\subsection{Headplate Implant}
+
+The mice were first anaesthetized with 3\% isoflurane and hair was shaved off on top of the skull. Viscotears were applied to both eyes to keep the eyes moist. The mice were transferred to a heating pad and head fixed by ear bars. 0.4mm diameter marks were made on the skull ML 3.4mm from Bregma and on top of the transverse suture for mEC probe. A dot was marked AP –3.1mm and ML 2.5mm from Bregma and 4 dots were marked +\_ 0.5mm from the centre for V1 probe. A ground screw was affixed 1.0-1.5mm posterior and 0.5mm on the left to the Lambda. A headplate was attached to the skull on top of the Bregma with transparent metabond. 
+
+\subsection{Acute Electrophysiology Craniotomy}
+
+After training, craniotomies were performed the night before electrophysiology for the mice to recover overnight. The mice were anaesthetized and head-fixed. The transparent metabond and the skull at the marked areas were shaved down with a drill. A 1.0mm diameter craniotomy is drilled down from the 5 dots marked for V1+Hippocampus recording. For mEC recording, it was drilled down posterior to the marking and the transverse sinus was located inside the posterior part of the craniotomy. Dura gel is applied to fill the craniotomies and prevent the dura being dry. A large plastic round cap is placed on top of both craniotomies and KwikCast is applied to affix the cap to the skull which covers the cranitomies well overnight before recording sessions. 
+
+\subsection{Chronic Recording implant With Appollo Design}
+Similar as the acute recording craniotomy as above for the craniotomy. In the chronic recordings, Neuropixel 2.0 probes were used and the craniotomy at MEC site is 1.5-2.0 mm diameter to allow flexibility of  multiple shanks entry as the insertion is much more difficult than V1 next to the transverse sinus. After craniotomy, dura gel is applied and the two probes on Appollo design are inserted at the same time and MEC site insertion is prioritised due to thick dura and the transverse sinus. A relative high speed is used at the start of the insertion for 300-400 microns. Duratonomy is performed if the shanks cannot break through. Once the shanks are in, the probes are inserted at 5 microns/s speed. After 3000-3500 microns in the brain by the MEC probe, the MEC shanks will bend due to touching the skull at the bottom and the probes are immediately retracted for 100-500 microns. After the probes are settled, UV-cured cement is applied to cover all the craniotomy and extra metabond cement is added to strangthen the chronic implants.
+
+
+
+\section{Behavioural Training Rig Setup}
+\subsection{Training Setup}
+Numerous refinements of previous rigs in the lab were needed. Hence, the previous rigs were removed, and 4 new parallel VR behavioural training rigs were re-built with a new design for training at most 4 mice simultaneously to learn the behavioural task before electrophysiology sessions (\textit{Fig.2}). The VR set ups were 4 small cube boxes with doors and consisted of a wheel with a headplate holder on top, a behavioural monitor camera coupled with infrared lights, a lickport, and three screens (\textit{Fig.2}). The wheel is the same make as \href{https://hackaday.io/project/160744-kinemouse-wheel}{https://hackaday.io/project/160744-kinemouse-wheel} which has a transparent wheel made of polycarbonate, a soft sillicone texture wrapping around the wheel for the mouse to run comfortably, and a mirror inside the wheel at 33 degrees to allow camera to track not only the mouse body but also the four paws underneath. The wheel is connected to a rotary encoder which is calibrated to real distance for the VR and can monitor the distance the mouse travels and its speed (\textit{Fig.2}). The behavioural camera is a raspberry Pi HQ camera with infrared light filter removed and a 6mm Raspberry Pi wide angle lens, and the camera is attached to the wall for full-body tracking. The lickport is in front of the wheel and has two slots for the mouse to lick left or right and each slot has a tubing connected to the reward delivery system. The reward is delivered by opening a valve using commands from Bonsai scripts. Lick detection of the mouse tounge is achieved by IR sensors on top and bottom walls of the port(\textit{Fig.2}). The three screens are installed at the same level as the headplate holder and cover the majority of the visual field.
+
+
+\subsection{Chronic Recording Addition to Training Rig}
+The training rig is used in later chronic recordings as well. In order to synchronise the data, photodiode and sync pulse using an arduino are added to the rig. An infra red light of the sync pulse is added in the video tracking system as a backup sync pulse. All major behavioural and stimuli output are connected to a NIDQ board which connects to the neuropixel acquisition system.
 
 \section{Electrophysiology Recording Setup}
+\subsection{Acute Recording Setup}
+The previous acute electrophysiology rig only had a large movable microscope and one Neuropixel manipulator. The new experiments require two manipulators for acute insertion of two Neuropixel probes which can take up plenty of space. A new rig was designed on blender and implemented (\textit{Fig.3}). The new rig has two Neuropixel manipulators in parallel for flexible insertions in any region behind the headplate of the animal. To save space from the giant microscope, two digital cameras with microscopic lens were placed on left and right sides of the manipulators to provide two views of the craniotomies and the accurate probe 3D positions (\textit{Fig.3}). The two cameras are connected to a laptop next to the touch screen controller of the manipulators for precise controls. Two flexible LED lights for examining the craniotomies are installed in the back. The new lickport and transparent wheel in the behavioural setup were also added to the electrophysiology rig. The electrophysiology rig has a high-resolution camera behind the mouse which monitors the left eye and face of the mouse with an IR-filter mirror and an IR-light. The visual stimuli are presented onto a semi-spherical dome by a projector. The projector is calibrated to the mouse’s visual field by meshmapping at the headplate position which is centred at 0 degree azimuth and elevation in the range of –120 to +120 degrees azimuth and –30 to 90 degrees of elevation. 
+
+\subsection{Chronic Recording Setup}
+The chronic recordings are performed in the same rig as behavioural training. It uses a similar setup as the acute but with a portable trolley and an addition of NIDQ board. The trolley allows the experimenter to run multiple experiments in different rooms with a chronically-implanted mouse.
+
+\section{Experiment Tasks}
+\subsection{VR Corridor}
+The main stimulus familiar versus novel corridor task contains a familiar corridor same as behavioural training and the novel corridor has three white dots in black background as the contextual cue landmark (30cm), black plus sign as the first repeating landmark (50, 90cm), and the second repeating landmark plaid (70, 110cm) remains the same as the familiar corridor, and repeated contextual landmark at the end (130cm) (\textit{Fig.5B}). The reward zone is at 135cm for the novel corridor. On the first session, the familiar corridor was played in 30 laps and the novel corridor was introduced at 31\textsuperscript{st} lap with 30 repeats, followed by each corridor being played for 10 laps each until the session ended. After the first session, each corridor was played for 10 laps each until the session ended in 30-70min (\textit{Fig.5A}). 
+
+
+\subsection{Visual Stimuli}
+Checkboard. It presents a black and white full-screen grid board with 15 degrees size square grids. Every 0.5s, the grids flip to opposite color. The stimulus lasts 2 minutes.
+
+Sparse noise. Every 0.1s, a randomly located set of 5 black and white dots is presented spanning the full screen in total of 6000 trials lasting 10 minutes (\textit{Fig.8A}).
+
+Static gratings. Random static gratings ranging from 0 to 165 degrees at an interval of 15 degrees are presented for 1s and gray screen interval for 1s in total of 200 or 360 trials lasting 400s or 720s (\textit{Fig.8B}).
+
+Dot motions. Random dots are present on the screen and move at a coherent speed from 0 to 256 degrees/s from the centre of the screens to the end of the left screen as the recordings are in the right hemisphere. This stimulus is only used in the chronic recordings.
+
+
+
+\subsection{Freely Moving in Open Field}
+The experimented mouse is placed on top of an elevated round platform in 70 cm diameter for 30-50 minutes. The disk is surrounded by a 200 cm diameter circular wall with two patches of visual stimuli opposite to each other. Random rewards are dropped on the platform to encourage the mouse to explore the environment. An IR camera from above is used to track the animal's position and an IR LED is on the floor to synchronise between the videos and recordings.
+
+
 
 \section{Preprocessing Pipeline}
 % This just dumps some pseudolatin in so you can see some text in place.
