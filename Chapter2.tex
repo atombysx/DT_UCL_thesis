@@ -24,6 +24,13 @@ Similar as the acute recording craniotomy as above for the craniotomy. In the ch
 \section{Behavioural Training Rig Setup}
 \subsection{Training Setup}
 Numerous refinements of previous rigs in the lab were needed. Hence, the previous rigs were removed, and 4 new parallel VR behavioural training rigs were re-built with a new design for training at most 4 mice simultaneously to learn the behavioural task before electrophysiology sessions (\textit{Fig.2}). The VR set ups were 4 small cube boxes with doors and consisted of a wheel with a headplate holder on top, a behavioural monitor camera coupled with infrared lights, a lickport, and three screens (\textit{Fig.2}). The wheel is the same make as \href{https://hackaday.io/project/160744-kinemouse-wheel}{https://hackaday.io/project/160744-kinemouse-wheel} which has a transparent wheel made of polycarbonate, a soft sillicone texture wrapping around the wheel for the mouse to run comfortably, and a mirror inside the wheel at 33 degrees to allow camera to track not only the mouse body but also the four paws underneath. The wheel is connected to a rotary encoder which is calibrated to real distance for the VR and can monitor the distance the mouse travels and its speed (\textit{Fig.2}). The behavioural camera is a raspberry Pi HQ camera with infrared light filter removed and a 6mm Raspberry Pi wide angle lens, and the camera is attached to the wall for full-body tracking. The lickport is in front of the wheel and has two slots for the mouse to lick left or right and each slot has a tubing connected to the reward delivery system. The reward is delivered by opening a valve using commands from Bonsai scripts. Lick detection of the mouse tounge is achieved by IR sensors on top and bottom walls of the port(\textit{Fig.2}). The three screens are installed at the same level as the headplate holder and cover the majority of the visual field.
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{figures//Chapter 2/fig1_matrix_rig_setup.pdf}
+    \caption{Behavioural Rig Setup}
+An illustration of 4 parallel rigs and details in the rig. See method Behavioural Setup. Below is a pic of the mouse performing a spatial task from the behavioural tracking camera which tracks the whole body with a mirror underneath to fully track the paws(Tong et al., 2023).  
+    \label{fig:placeholder}
+\end{figure}
 
 
 \subsection{Chronic Recording Addition to Training Rig}
@@ -35,10 +42,18 @@ The previous acute electrophysiology rig only had a large movable microscope and
 
 \subsection{Chronic Recording Setup}
 The chronic recordings are performed in the same rig as behavioural training. It uses a similar setup as the acute but with a portable trolley and an addition of NIDQ board. The trolley allows the experimenter to run multiple experiments in different rooms with a chronically-implanted mouse.
-
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{figures//Chapter 2/fig2_acute_ephys.pdf}
+    \caption{Acute Electrophysiology Recording Setup}
+    \label{fig:placeholder}
+\end{figure}
 \section{Experiment Tasks}
 \subsection{VR Corridor}
 The main stimulus familiar versus novel corridor task contains a familiar corridor same as behavioural training and the novel corridor has three white dots in black background as the contextual cue landmark (30cm), black plus sign as the first repeating landmark (50, 90cm), and the second repeating landmark plaid (70, 110cm) remains the same as the familiar corridor, and repeated contextual landmark at the end (130cm) (\textit{Fig.5B}). The reward zone is at 135cm for the novel corridor. On the first session, the familiar corridor was played in 30 laps and the novel corridor was introduced at 31\textsuperscript{st} lap with 30 repeats, followed by each corridor being played for 10 laps each until the session ended. After the first session, each corridor was played for 10 laps each until the session ended in 30-70min (\textit{Fig.5A}). 
+
+\subsection{Behavioural Training}
+After headplate implant surgery recovery, the mouse is first head-fixed on the wheel in the rig and habituated to a random-dot closed-loop VR corridor using a Bonsai script (Lopes et al., 2015) for 10-30 minutes in 3-5 days to encourage running (\textit{Fig.4A}). The lickport is slowly brought closer to the mouse once the mouse is accustomed to the environment. Once the mouse is used to the rig, the mouse is introduced to the spatial navigation corridor (familiar) (\textit{Fig4.}B) and the water restriction protocol starts with at least 40ml/kg hydrogel given. The closed-loop VR corridor with white noise background is rendered by BonVision and displayed on the three screens. The 140cm corridor has a black cross in white background contexual landmark at 30cm and two pairs of repeating landmarks (first vertical grating and second plaid), A-B-A-B at 50, 70, 90, 110cm (\textit{Fig4.}B). The reward zone is initially 110-130cm. Once a trial finishes, a gray screen is shown for 3-5s. In the early stage, the tubing in the lickport is pulled out from the port so it’s close to the mouth of the mouse. This allows the mouse to be familiar with licking reward which is made of 10\% sucrose and cherry flavor cool-aid but the lick detection sensors are blocked by the tubing. The mouse is first encouraged to run in the corridor and passive reward (\~2μL) is given to the mouse at the centre of the reward zone. The tubing is pulled closer to the sensor and reward is given to the mouse to test if the mouse could lick at this distance before the session starts every day. Once the mouse can respond and lick the reward within range of the lick detection working distance, the task is set to hybrid which gives passive reward at the centre of the reward zone and active reward is given if the mouse licked within 10cm before the centre of the reward zone. The active reward is 2-3 times more than passive reward. If the mouse licked over 15 times before the reward zone, the trial is omitted and restarted. Reward zone size and overlicking threshold are gradually reduced to 10cm and 10 times. In addition, licking at third landmark rather than 5\textsuperscript{th} and active reward rate are also used as indicators of training progress. The mouse is transferred to the electrophysiology rig and trained for 5-7 days before acute electrophysiology recording (\textit{Fig.4A}). For chronic recordings, the mouse is trained for 3-5 more days after chronic implant surgery.
 
 
 \subsection{Visual Stimuli}
@@ -50,7 +65,12 @@ Static gratings. Random static gratings ranging from 0 to 165 degrees at an inte
 
 Dot motions. Random dots are present on the screen and move at a coherent speed from 0 to 256 degrees/s from the centre of the screens to the end of the left screen as the recordings are in the right hemisphere. This stimulus is only used in the chronic recordings.
 
-
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{figures//Chapter 2//Thesis Figures/fig4_RF_and_gratings.pdf}
+    \caption{Visual Stimuli}
+    \label{fig:placeholder}
+\end{figure}
 
 \subsection{Freely Moving in Open Field}
 The experimented mouse is placed on top of an elevated round platform in 70 cm diameter for 30-50 minutes. The disk is surrounded by a 200 cm diameter circular wall with two patches of visual stimuli opposite to each other. Random rewards are dropped on the platform to encourage the mouse to explore the environment. An IR camera from above is used to track the animal's position and an IR LED is on the floor to synchronise between the videos and recordings.
@@ -58,5 +78,33 @@ The experimented mouse is placed on top of an elevated round platform in 70 cm d
 
 
 \section{Preprocessing Pipeline}
-% This just dumps some pseudolatin in so you can see some text in place.
-\blindtext
+\subsection{Recording Preprocessing}
+
+
+\subsection{Data Synchronisation}
+
+
+\subsection{Register Probe to Brain Regions}
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{figures//Chapter 2/fig3_probe_location_checkerboard.pdf}
+    \caption{Register Brain Region to the Probe Based on Histology and Physiology}
+    \label{fig:placeholder}
+\end{figure}
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{figures//Chapter 2//plots/flow_chart_td.png}
+    \caption{Experiment Data Preprocessing Pipeline}
+    \label{fig:placeholder}
+\end{figure}
+
+
+
+
+
+\section{Histology}
+Pilot mEC coordinates were first tested before behavioural training with head implanted on animals. A needle was dipped inside DiI and inserted into the mouse brain at ML –3.4 before the transverse sinus at a 10-degree angle from posterior to anterior with stereotax. The mouse was anaesthetized with 3.5\% isoflurane, and then euthanized by intraperitoneal injection of overdose pentobarbital. The mouse is perfused with saline and followed by 4\% paraformaldehyde (PFA). The brain was extracted and stored in 4\% PFA for one day after which it was washed with 1X PBS twice and placed in 30\% sucrose until it settled to the bottom of the bottle. The brain is frozen in OCT and cut into 50microns sagittal sections with a cryostat. The brain slices were mounted in DAPI solution and imaged with a fluorescence microscope. The slices were registered to the Allen Mouse Brain Atlas and the insertion tract was reconstructed by a MATLAB based software SHARP-Track (\href{https://github.com/cortex-lab/allenCCF}{https://github.com/cortex-lab/allenCCF}).
+
+ In acute electrophysiology recording histology, the neuropixels were applied with same DiI or DiD or DiO before each recording session. The rest of the histology procedure is the same. Dyes at different fluorescent wavelengths can help distinguish corresponding sessions. For chronic recordings, only DiI is applied to all shanks.
