@@ -33,7 +33,7 @@
 
 % The setspace package lets you use 1.5-sized or double line spacing.
 \usepackage{setspace}
-\setstretch{1.5}
+\setstretch{2}
 
 % That just does body text -- if you want to expand *everything*,
 %  including footnotes and tables, use this instead:
@@ -138,3 +138,7 @@
 % The microtype package adds `micro-typographic extensions' which
 % generally makes text more readable and hyphenation less likely.
 \usepackage{microtype}
+
+% Set main font to Arial (requires XeLaTeX or LuaLaTeX compiler)
+\usepackage{fontspec}
+\setmainfont{Arial}
