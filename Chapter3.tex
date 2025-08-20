@@ -1,7 +1,7 @@
 \chapter{Mouse Behaviour in Complex VR Tasks}
 \label{chapterlabel3}
 
-\section{Can Mouse Learn Visually Complex Navigation Task?}
+\section{Can Mice Learn Visually Complex Navigation Task?}
  Many recent studies in mouse VR navigation tasks use tall and large visual landmarks which can be seen and distinguished from far away with floor patterns as only background. In the experiment design I use, it presents the challenge to the mouse that it needs to differentiate sets of identical landmarks in grayscale and the well-controlled white noise gray background. Compared to primates, cats, birds, mice have low acuity vision. One may argue that mouse cannot differentiate such detailed visual landmarks in a VR setting to form clear representations of the space. In Saleem et al. 2018, they've trained the mice to actively lick for a reward associated to one of the identical plaid landmarks spaced at 20cm in a 100 cm corridor. Here in one of the environment, I use a familiar set of landmarks but with an additional cue landmark at the start with extension of extra 40 cm. Further to that, the VR corridor is constrained to only show 21cm ahead of the mouse rather than the full view ahead. This method prevents the mouse knowing what landmarks are ahead until it passes the current landmark and it is different from the conventional VR task particularly in studies on hippocampus and entorhinal cortices. Therefore, it can be perceptually more challenging to distinguish one visual landmark and 2 sets of identical visual landmarks in 100 cm space. In addition, in the recording period, there would be an extra environment introduced to the animal and the novel environment contains one of the same set of landmarks, that is, the plaids, and the mouse is required to distinguish the two environments are different. In this chapter, I will show mice can learn visually complex navigation tasks.
  \begin{figure}
     \centering
@@ -52,7 +52,7 @@ Summaries of licking, running, and active reward rate across mice from early to 
 \end{figure}
 
 \section{Results}
-\subsection{Active Behaviour in the VR is Successfully Trained}
+\subsection{Mice Can Perform Active Behaviour in a Complex VR Setting}
 
 
 In Chapter 2 method of behavioural training, a detailed training protocol is described. Here in Fig 3.1, the sequence of the learning is described. After habituation, the mouse runs through the VR environments with a passive reward given. Over days, the mouse learns how to lick in the lickport and start active licking along the corridor. With the active licking, the mouse can trigger the active rewards themself which is within 5 cm before the reward zone mark. After learning where the reward zone is, the mouse commonly reduces licking at other locations and lick more frequently just before the reward zone but sometimes after the first plaid which can be confused between the two plaids. Overall, there are 14 mice trained and they all successfully performed ative licking and active reward laps. 2 out of the 14 mice were trained with the opposite track which is the novel track for the other 12 mice. A quantitative summary of the active behaviour learning will be presented.
@@ -76,7 +76,7 @@ Demonstration of lap type categories, their transition matrix and their preferen
     \label{fig:how to preference matrix}
 \end{figure}
 
-\subsection{Lap Types Prefer Transitioning into Specific Lap Types}
+\subsection{Lap Types Have Transition Preferences}
 In above results, the mice are shown to learn the task to perform active reward acquisition at a reward zone overall. However, during learning, the mice can have lap by lap variability in terms of behaviour and this variability can reveal the animal's current behavioural state and how these behavioural states can change over learning. In order to capture the variability in laps, the laps are further classified into 6 types from just active and passive laps based on the licking behaviour. In Fig 3.4A, examples of each lap type are shown and their corresponding overall probability across sessions and mice. Both passive and aborted laps are simply divided into with or without licking before reward is given. For active laps, they are classified by if the mouse can perform an active reward lap precisely or not which means if the mouse only licked within 10 cm before active reward is obtained. Passive with licking is the most common lap type, and both active with licking and passive with no licking are second highest. The rest are relatively low probability overall. 
 
 Do these lap types have relations to each other? A transition matrix is calculated to compare how likely a lap type X transitions into a lap type Y from lap i to lap j (Fig 3.4B). To normalise the imbalanced overall probability of lap types, a preference matrix is calculated by dividing the transition matrix over the overall probability of the lap types in next lap j. In Fig 3.4C, an overall preference matrix is shown with log 10 based likelihood indicating that the lap type X prefers lap type Y if log likelihood is above 0, and it does not prefer lap type Y if it is below 0. Next to the matrix, it is a graph plot of the matrix to visualise the relationship between lap types. First, in both diagonal of the matrix and the self loop of the graph, lap types prefer transitioning into themselves. Second, active lap types and aborted with licking have high preferences between each other forming a small hub of lap type transitions. Third, passive with no licking prefers itself highly but have relatively higher likelihood to transition into either aborted with no licking which means mouse is immobile for a long duration or passive with licking which means the mouse starts licking and passive with licking will further transition into active lap types. Thus, when animal is not engaged and starts transitioning back to active behaviour, it will first more likely transition into passive with licking and then transition to active reward lap types rather than transition to active reward lap types directly. Taken together, this shows a hint of 3 major behavioural states of the mouse: inactive - staying within the hub of passive with no licking and aborted with no licking, active licking but low performance - staying within passive with licking, and engaged with active rewards - staying within the hub of  active precise, active with licking and aborted with licking. The mice prefer to staying within the current behavioural states. But how are they the same over learning?
@@ -101,7 +101,7 @@ Illustration of preference matrix over lap type at early, mid, and late stages o
 
 
 
-\subsection{Mouse Can Distinguish A Novel Environment from Familiar Environment Behaviourally}
+\subsection{Mice Can Distinguish A Novel Environment from Familiar Environment Behaviourally}
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{figures//Chapter 3 Behaviour//Thesis Figures//figure_PDFs/fig6_novel_track_behaviour_examples.pdf}
