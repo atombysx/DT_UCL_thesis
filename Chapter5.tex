@@ -43,3 +43,19 @@ In addition to spatial tuning, many MEC cells are tuned to the animal's running 
 \end{figure}
 
 \subsection{Multi-variate Tuning in MEC Cells}
+MEC cells have subpopulations tuned to multiple variables and the interaction between variables can be additive or multiplicative at neuronal level. As described in previous V1 neuron characterisation chapter, a \(Speed \times Position \) binning method was used to compare speed impact on spatial binning. Here, the same method is used to understand the relationship between speed tuning and spatial tuning. In Fig 5.3A and Fig 5.3F, two example neurons with low-pass speed tuning and high-pass speed tuning respectively. In Fig 5.3A, the neuron has the low-pass speed tuning effect on the first spatial peak at the start of VR but the peaks at the end of VR around 135-160 cm have high firing rate at the peak positions whatever the animal's running speed is. In Fig 5.3F, the neuron has high-pass speed tuning effect on all the positional tuning across the VR from 30-150 cm in both tracks, but the neuron has no speed tuning at all in the rest including start of the VR and the gray screen period. In addition, the difference in position of the last peaks in track 1 and track 2 in Fig 5.3A and Fig 5.3B and the extra peak in track 2 of Fig 5.3F and Fig 5.3G can potentially be contributed by the reward responses as the reward zone is 115-125 cm in track 1 and 130-140 cm in track 2. In order to understand the multi-variate tuning in MEC cells, a generalised linear model is applied to the cells. The model has 5 cm bin spatial predictors for each track and speed predictors at 2.5 cm/s bins and a reward predictor at [0, 0.5]s time range. A ridge regression is applied to the GLM with a normal distribution. 
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{figures//Chapter 5 MEC/fig3_multiple_navigational_variables.pdf}
+    \caption{MEC Cells Tuned to Multiple Navigational Variables}
+    
+    \label{fig:placeholder}
+\medskip
+\small
+In this figure, two example neurons are displayed and they separated by top and bottom rows. \textbf{A,F)} Firing rate is binned by \(Speed \times Position\) to show the impact of speed tuning on spatial tuning and top panel is track 1 and bottom panel is ttrack 2. \textbf{B, G)} The raster plots across the tracks of two example neurons and their PSTHs in the two tracks. \textbf{C, H)} Same as \textbf{(B,G)} but using predicted firing rates from a trained GLM model. \textbf{D, I)} Speed predictors' weights from the GLM model. \textbf{E, J)} Reward predictors' impact in the two tracks on the PSTH.
+\end{figure}
+
+
+
+
+\subsection{MEC Has a Subpopulation with Periodic Firing}
