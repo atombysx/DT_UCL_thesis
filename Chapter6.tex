@@ -1,2 +1,14 @@
 \chapter{Population Representations in V1 and MEC}
 \label{chapterlabel6}
+
+
+
+\section{Method}
+\subsection{Factor Analysis}
+Both V1 and MEC population analyses bin the spiking activity of all neurons for at 1cm and smoothed by a gaussian filter with 200ms window. For each lap, the spatial bins are 140cm (if animal finished the full VR) + distance the animal travelled in gray screen period before next lap. For each neuron, the responses are normalised across laps to prevent high firing rate neurons dominating. In addition, laps are divided into 10 folds and neurons are removed if their median variance is below 0.6 across the 10 folds (removes low variance neurons and prevents covariance matrix becomes zero during cross validation).
+
+The factor analysis is applied to each lap and reduces the \(N_{neuron} \times Position\) matrix to \(M_{optimal} \times Position\) matrix where \(M_{optimal} < N_{neuron}\). Factor analysis is a linear dimension reduction method and finds the low dimensions in the population activity from neurons with high shared variance by the following:
+
+\(X \sim \mathcal{N}(mu, LL^\top + \Psi)\)
+
+.where $\mathbf{x}$ ($n \times 1$) is a vector of spike counts from $n$ neurons; $\boldsymbol{\mu}$ ($n \times 1$) is a set of mean spike counts from the same $n$ neurons; $\mathbf{L}$ ($n \times m$) is the loading matrix which maps the $m$-dimensional latent variable to the spike counts of $n$ neurons and $\boldsymbol{\Psi}$ ($n \times n$) is a diagonal matrix of independent neuron variance. The code is adapted from code modified from the DataHigh Matlab toolbox and it solves the factor analysis with expectation maxmisation method. The best dimension number is found by 3-fold cross vailidation with log likelihood.
